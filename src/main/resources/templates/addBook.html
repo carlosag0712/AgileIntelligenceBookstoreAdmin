@@ -112,7 +112,7 @@
                 <div class="col-md-6">
                     <div class="input-group">
                 <input type="number" class="form-control" id="shippingWeight" placeholder="Shipping Weight"
-                       th:value="${book.shippingWeight}" required="required" name="shippingWeight"/>
+                       th:value="${book.shippingWeight}" required="required" name="shippingWeight" step="0.01"/>
                         <span class="input-group-addon">Ounces</span>
                 </div>
                     <span class="help-block">Shipping Weight</span>
@@ -127,7 +127,7 @@
                     <div class="input-group">
                         <span class="input-group-addon">USD</span>
                         <input type="number" class="form-control" id="listPrice" placeholder="List Price"
-                               th:value="${book.listPrice}" required="required" name="listPrice" />
+                               th:value="${book.listPrice}" required="required" name="listPrice" step="0.01"/>
                     </div>
                     <span class="help-block">List Price</span>
                 </div>
@@ -140,7 +140,7 @@
                     <div class="input-group">
                         <span class="input-group-addon">USD</span>
                         <input type="number" class="form-control" id="ourPrice" placeholder="Our Price"
-                               th:value="${book.ourPrice}" required="required" name="ourPrice"/>
+                               th:value="${book.ourPrice}" required="required" name="ourPrice" step="0.01"/>
                     </div>
                     <span class="help-block">Our Price</span>
                 </div>
