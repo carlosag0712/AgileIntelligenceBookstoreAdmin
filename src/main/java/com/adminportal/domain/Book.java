@@ -28,6 +28,7 @@ public class Book {
 	private double listPrice;
 	private double ourPrice;
 	private boolean active=true;
+	private String imageUrl;
 	
 	@Column(columnDefinition="text")
 	private String description;
@@ -171,6 +172,12 @@ public class Book {
 	public void setBookImage(MultipartFile bookImage) {
 		this.bookImage = bookImage;
 	}
-	
-	
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 }

@@ -44,18 +44,18 @@ public class BookController {
     ){
         bookService.save(book);
 
-        MultipartFile bookImage = book.getBookImage();
-
-        try{
-            byte[] bytes = bookImage.getBytes();
-            String name = book.getId()+".png";
-            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream (new File("src/main/resources/static/image/book/"+name)));
-            stream.write(bytes);
-            stream.close();
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        MultipartFile bookImage = book.getBookImage();
+//
+//        try{
+//            byte[] bytes = bookImage.getBytes();
+//            String name = book.getId()+".png";
+//            BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream (new File("src/main/resources/static/image/book/"+name)));
+//            stream.write(bytes);
+//            stream.close();
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
         return "redirect:bookList";
 
@@ -82,23 +82,23 @@ public class BookController {
     public String updateBookPost(@ModelAttribute("book") Book book, HttpServletRequest request) {
         bookService.save(book);
 
-        MultipartFile bookImage = book.getBookImage();
-        if(!bookImage.isEmpty()){
-            try{
-                byte[] bytes = bookImage.getBytes();
-                String name = book.getId() + ".png";
-
-                Files.delete(Paths.get("src/main/resources/static/image/book/" + name));
-
-                BufferedOutputStream stream = new BufferedOutputStream(
-                        new FileOutputStream(new File("src/main/resources/static/image/book/" + name)));
-                stream.write(bytes);
-                stream.close();
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
+//        MultipartFile bookImage = book.getBookImage();
+//        if(!bookImage.isEmpty()){
+//            try{
+//                byte[] bytes = bookImage.getBytes();
+//                String name = book.getId() + ".png";
+//
+//                Files.delete(Paths.get("src/main/resources/static/image/book/" + name));
+//
+//                BufferedOutputStream stream = new BufferedOutputStream(
+//                        new FileOutputStream(new File("src/main/resources/static/image/book/" + name)));
+//                stream.write(bytes);
+//                stream.close();
+//
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+//        }
 
         return "redirect:/book/bookInfo?id="+book.getId();
 
